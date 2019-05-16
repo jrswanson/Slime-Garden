@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slime Garden</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #6F6F6F;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .spore-container {
+            display: flex;
+            width: 600px;
+            justify-content: space-around;
+        }
+
+        canvas {
+            cursor: pointer;
+        }
+
+        .plants-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+        }
+
+        #r-plant-spore {
+            width: 60px;
+            height: 40px;
+            background-color: #c0ffa2;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        #m-plant-spore {
+            width: 60px;
+            height: 40px;
+            background-color: #52FF00;
+            cursor: pointer;
+        }
+
+        #k-plant-spore {
+            width: 60px;
+            height: 40px;
+            background-color: #2f9100;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #m-fungus-spore {
+            width: 150px;
+            height: 100px;
+            background-color: #00fcff;
+            cursor: pointer;
+        }
+
+        #m-animal-spore {
+            width: 150px;
+            height: 100px;
+            background-color: #ff2400;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="600" height="400" id="canvas"></canvas>
+    <div class='spore-container'>
+        <div class='plants-container'>
+            <div id='r-plant-spore' onclick="selectRPlant()"></div>
+            <div id='m-plant-spore' onclick="selectMPlant()"></div>
+            <div id='k-plant-spore' onclick="selectKPlant()"></div>
+        </div>
+        <div id='m-fungus-spore' onclick="selectMFungus()"></div>
+        <div id='m-animal-spore' onclick="selectMAnimal()"></div>
+    </div>
+    <script src='index.js'></script>
+</body>
+</html>
