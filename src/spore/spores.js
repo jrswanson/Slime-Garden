@@ -1,44 +1,64 @@
 const empty = {
     growthRate: 0,
     growthPattern: [],
-    bodySize: 0,
+    toughness: 0,
     lifeSpan: 0,
     type: -1,
     name: 'empty',
     color: '#1D1D1D'
 };
 
-const dead = {
+const rDead = {
     growthRate: 0,
     growthPattern: [],
-    bodySize: 1,
+    toughness: 1,
+    lifeSpan: 0.5,
+    type: 0,
+    name: 'rDead',
+    color: '#68543c'
+};
+
+const mDead = {
+    growthRate: 0,
+    growthPattern: [],
+    toughness: 1,
+    lifeSpan: 0.99,
+    type: 0,
+    name: 'mDead',
+    color: '#6f491d'
+};
+
+const kDead = {
+    growthRate: 0,
+    growthPattern: [],
+    toughness: 1,
     lifeSpan: 0.999,
     type: 0,
-    name: 'dead',
-    color: '#6f491d'
+    name: 'kDead',
+    color: '#442d12'
 };
 
 const rPlantSpore = {
     growthRate: 0.99,
     growthPattern: [
-        [-1, 0],
+        [-3, 0],
         [-2, 2],
-        [0, 1],
+        [0, 3],
         [2, 2],
-        [1, 0],
+        [3, 0],
         [2, -2],
-        [0, -1],
+        [0, -3],
         [-2, -2]
     ],
-    bodySize: 0.3,
-    lifeSpan: 0.7,
+    toughness: 0.3,
+    lifeSpan: 0.5,
     type: 1,
     name: 'rPlantSpore',
-    color: '#c0ffa2'
+    color: '#b7ff6a'
 };
 
 const mPlantSpore = {
-    growthRate: 0.3,
+    growthRate: 0.2,
     growthPattern: [
         [-1, 0],
         [-1, 1],
@@ -49,7 +69,7 @@ const mPlantSpore = {
         [0, -1],
         [-1, -1]
     ],
-    bodySize: 0.5,
+    toughness: 0.5,
     lifeSpan: 0.9,
     type: 1,
     name: 'mPlantSpore',
@@ -64,11 +84,30 @@ const kPlantSpore = {
         [1, 0],
         [0, -1]
     ],
-    bodySize: 0.9,
+    toughness: 0.9,
     lifeSpan: 0.99,
     type: 1,
     name: 'kPlantSpore',
-    color: '#2f9100'
+    color: '#038400'
+};
+
+const rFungusSpore = {
+    growthRate: 0.99,
+    growthPattern: [
+        [-1, 0],
+        [-2, 2],
+        [0, 1],
+        [2, 2],
+        [1, 0],
+        [2, -2],
+        [0, -1],
+        [-2, -2]
+    ],
+    toughness: 0.3,
+    lifeSpan: 0.7,
+    type: 2,
+    name: 'rFungusSpore',
+    color: '#b3ffe5'
 };
 
 const mFungusSpore = {
@@ -83,39 +122,98 @@ const mFungusSpore = {
         [0, -1],
         [-1, -1]
     ],
-    bodySize: 0.5,
+    toughness: 0.5,
     lifeSpan: 0.9,
     type: 2,
     name: 'mFungusSpore',
     color: '#00fcff'
 };
 
-const mAnimalSpore = {
-    growthRate: 0.7,
+const kFungusSpore = {
+    growthRate: 0.1,
     growthPattern: [
         [-1, 0],
-        [-1, 1],
         [0, 1],
-        [1, 1],
         [1, 0],
-        [1, -1],
-        [0, -1],
-        [-1, -1]
+        [0, -1]
     ],
-    bodySize: 0.5,
+    toughness: 0.9,
+    lifeSpan: 0.99,
+    type: 2,
+    name: 'kFungusSpore',
+    color: '#0083c7'
+};
+
+const rAnimalSpore = {
+    growthRate: 0.1,
+    growthPattern: [
+        [-3, 0],
+        [-2, 2],
+        [0, 3],
+        [2, 2],
+        [3, 0],
+        [2, -2],
+        [0, -3],
+        [-2, -2]
+    ],
+    toughness: 0.3,
+    lifeSpan: 0.85,
+    type: 3,
+    name: 'rAnimalSpore',
+    color: '#ff7c66'
+};
+
+const mAnimalSpore = {
+    growthRate: 0.15,
+    growthPattern: [
+        [-3, 0],
+        [-2, 2],
+        [0, 3],
+        [2, 2],
+        [3, 0],
+        [2, -2],
+        [0, -3],
+        [-2, -2]
+    ],
+    toughness: 0.5,
     lifeSpan: 0.9,
     type: 3,
     name: 'mAnimalSpore',
     color: '#ff2400'
 };
 
+const kAnimalSpore = {
+    growthRate: 0.2,
+    growthPattern: [
+        [-1, 0],
+        [-2, 2],
+        [0, 1],
+        [2, 2],
+        [1, 0],
+        [2, -2],
+        [0, -1],
+        [-2, -2]
+    ],
+    toughness: 0.9,
+    lifeSpan: 0.95,
+    type: 3,
+    name: 'kAnimalSpore',
+    color: '#9d1600'
+};
+
 
 export default {
     empty,
-    dead,
+    rDead,
+    mDead,
+    kDead,
     rPlantSpore,
     mPlantSpore,
     kPlantSpore,
+    rFungusSpore,
     mFungusSpore,
-    mAnimalSpore
+    kFungusSpore,
+    rAnimalSpore,
+    mAnimalSpore,
+    kAnimalSpore
 };

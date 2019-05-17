@@ -41,6 +41,33 @@ class Garden {
         this.garden[x][y] = this.spores[sporeName];
     }
 
+    countNeighbors(x, y, type) {
+        let count = 0;
+        let neighborPixels = [
+            [-1, 0],
+            [-1, 1],
+            [0, 1],
+            [1, 1],
+            [1, 0],
+            [1, -1],
+            [0, -1],
+            [-1, -1]
+        ];
+
+        for (let i = 0; i < neighborPixels.length; i++) {
+            let move = neighborPixels[i];
+            let moveX = x + move[0];
+            let moveY = y + move[1];
+            if (moveX >= 0 && moveX < this.width &&
+                moveY >= 0 && moveY < this.height) {
+                let spore = this.garden[moveX][moveY];
+                if (spore.type === type) count++;
+            }
+        }
+
+        return count;
+    }
+
     reproduction(x, y, spore) {
         for (let i = 0; i < spore.growthPattern.length; i++) {
             let move = spore.growthPattern[i];
@@ -48,7 +75,7 @@ class Garden {
             let moveY = y + move[1];
             if (moveX >= 0 && moveX < this.width &&
                 moveY >= 0 && moveY < this.height) {
-                let pixel = this.competeArr[x + move[0]][y + move[1]];
+                let pixel = this.competeArr[moveX][moveY];
                 pixel[spore.name] = spore;
             }
         }
@@ -61,15 +88,20 @@ class Garden {
         for (let i = 0; i < spores.length; i++) {
             let roll = Math.random();
             let growthRate = spores[i].growthRate;
-            let bodySize = spores[i].bodySize;
+            let toughness = spores[i].toughness;
             if (growthRate > roll
-                && bodySize - roll > currScore
+                && toughness - roll > currScore
                 && spores[i].type === type) {
                 currSpore = spores[i];
-                currScore = bodySize - roll;
+                currScore = toughness - roll;
             }
         }
-        if (currSpore) this.garden[x][y] = currSpore;
+        if (currSpore
+            && (this.countNeighbors(x, y, currSpore.type) < 3
+            )) {
+                // || currSpore.type > 2
+            this.garden[x][y] = currSpore;
+        }
     }
 
     sortCompetition(x, y, collection) {
@@ -89,7 +121,7 @@ class Garden {
                 let spore = subArr[j];
                 let roll = Math.random() < spore.lifeSpan;
                 if (spore.type === 1 && !roll) {
-                    this.garden[i][j] = this.spores.dead;
+                    this.garden[i][j] = this.spores[spore.name[0] + 'Dead'];
                 } else if (spore.type === 0 && roll) {
                     null;
                 } else if (spore.type > 0 && roll) {

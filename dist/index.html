@@ -19,27 +19,24 @@
 
         .spore-container {
             display: flex;
-            width: 600px;
-            justify-content: space-around;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .spore-container > div {
+            margin: 0px 10px;
         }
 
         canvas {
             cursor: pointer;
         }
 
-        .plants-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            height: 100%;
-        }
-
         #r-plant-spore {
             width: 60px;
             height: 40px;
-            background-color: #c0ffa2;
+            background-color: #b7ff6a;
             cursor: pointer;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         #m-plant-spore {
@@ -52,23 +49,55 @@
         #k-plant-spore {
             width: 60px;
             height: 40px;
-            background-color: #2f9100;
+            background-color: #038400;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 20px;
+        }
+
+        #r-fungus-spore {
+            width: 60px;
+            height: 40px;
+            background-color: #b3ffe5;
+            cursor: pointer;
+            margin-bottom: 20px;
         }
 
         #m-fungus-spore {
-            width: 150px;
-            height: 100px;
+            width: 60px;
+            height: 40px;
             background-color: #00fcff;
             cursor: pointer;
         }
 
+        #k-fungus-spore {
+            width: 60px;
+            height: 40px;
+            background-color: #0083c7;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #r-animal-spore {
+            width: 60px;
+            height: 40px;
+            background-color: #ff7c66;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
         #m-animal-spore {
-            width: 150px;
-            height: 100px;
+            width: 60px;
+            height: 40px;
             background-color: #ff2400;
             cursor: pointer;
+        }
+
+        #k-animal-spore {
+            width: 60px;
+            height: 40px;
+            background-color: #9d1600;
+            cursor: pointer;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -80,8 +109,16 @@
             <div id='m-plant-spore' onclick="selectMPlant()"></div>
             <div id='k-plant-spore' onclick="selectKPlant()"></div>
         </div>
-        <div id='m-fungus-spore' onclick="selectMFungus()"></div>
-        <div id='m-animal-spore' onclick="selectMAnimal()"></div>
+        <div class='fungus-container'>
+            <div id='r-fungus-spore' onclick="selectRFungus()"></div>
+            <div id='m-fungus-spore' onclick="selectMFungus()"></div>
+            <div id='k-fungus-spore' onclick="selectKFungus()"></div>
+        </div>
+        <div class='animal-container'>
+            <div id='r-animal-spore' onclick="selectRAnimal()"></div>
+            <div id='m-animal-spore' onclick="selectMAnimal()"></div>
+            <div id='k-animal-spore' onclick="selectKAnimal()"></div>
+        </div>
     </div>
     <script src='index.js'></script>
 </body>
