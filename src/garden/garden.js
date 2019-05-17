@@ -90,16 +90,37 @@ class Garden {
             let growthRate = spores[i].growthRate;
             let toughness = spores[i].toughness;
             if (growthRate > roll
-                && toughness - roll > currScore
+                && (toughness - roll) > currScore
                 && spores[i].type === type) {
                 currSpore = spores[i];
                 currScore = toughness - roll;
             }
         }
-        if (currSpore
-            && (this.countNeighbors(x, y, currSpore.type) < 3
-            )) {
-                // || currSpore.type > 2
+        if (currSpore && this.countNeighbors(x, y, currSpore.type) < 3) {
+            this.garden[x][y] = currSpore;
+        }
+    }
+
+    processAnimalVsFungus(x, y, collection) {
+        let spores = Object.values(collection);
+        let currSpore = null;
+        let currScore = 0;
+        for (let i = 0; i < spores.length; i++) {
+            let roll = Math.random();
+            let growthRate = spores[i].growthRate;
+            let toughness = spores[i].toughness;
+            if (growthRate > roll
+                && (toughness - roll) > currScore
+                && spores[i].type > 1) {
+                currSpore = spores[i];
+                currScore = toughness - roll;
+            }
+        }
+        if (currSpore && this.countNeighbors(x, y, currSpore.type) < 3) {
+            let newSporeRoll = Math.random();
+            let oldSporeRoll = Math.random();
+            if ((currSpore.toughness - newSporeRoll)
+                > (this.garden[x][y].toughness - oldSporeRoll))
             this.garden[x][y] = currSpore;
         }
     }
@@ -109,8 +130,10 @@ class Garden {
             this.processCompetition(x, y, collection, 1);
         } else if (this.garden[x][y].type === 0) {
             this.processCompetition(x, y, collection, 2);
-        } else {
+        } else if (this.garden[x][y].type === 1) {
             this.processCompetition(x, y, collection, 3);
+        } else {
+            this.processAnimalVsFungus(x, y, collection);
         }
     }
 

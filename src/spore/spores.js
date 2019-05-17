@@ -111,7 +111,7 @@ const rFungusSpore = {
 };
 
 const mFungusSpore = {
-    growthRate: 0.1,
+    growthRate: 0.2,
     growthPattern: [
         [-1, 0],
         [-1, 1],
@@ -145,7 +145,7 @@ const kFungusSpore = {
 };
 
 const rAnimalSpore = {
-    growthRate: 0.1,
+    growthRate: 0.9,
     growthPattern: [
         [-3, 0],
         [-2, 2],
@@ -164,16 +164,16 @@ const rAnimalSpore = {
 };
 
 const mAnimalSpore = {
-    growthRate: 0.15,
+    growthRate: 0.7,
     growthPattern: [
-        [-3, 0],
-        [-2, 2],
-        [0, 3],
-        [2, 2],
-        [3, 0],
-        [2, -2],
-        [0, -3],
-        [-2, -2]
+        [-2, 0],
+        [-1, 1],
+        [0, 2],
+        [1, 1],
+        [2, 0],
+        [1, -1],
+        [0, -2],
+        [-1, -1]
     ],
     toughness: 0.5,
     lifeSpan: 0.9,
@@ -183,19 +183,15 @@ const mAnimalSpore = {
 };
 
 const kAnimalSpore = {
-    growthRate: 0.2,
+    growthRate: 0.5,
     growthPattern: [
         [-1, 0],
-        [-2, 2],
         [0, 1],
-        [2, 2],
         [1, 0],
-        [2, -2],
-        [0, -1],
-        [-2, -2]
+        [0, -1]
     ],
     toughness: 0.9,
-    lifeSpan: 0.95,
+    lifeSpan: 0.99,
     type: 3,
     name: 'kAnimalSpore',
     color: '#9d1600'
