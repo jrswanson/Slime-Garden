@@ -132,7 +132,7 @@ class Garden {
             this.processCompetition(x, y, collection, 2);
         } else if (this.garden[x][y].type === 1) {
             this.processCompetition(x, y, collection, 3);
-        } else {
+        } else if (this.garden[x][y].type === 2 || this.garden[x][y].type === 3) {
             this.processAnimalVsFungus(x, y, collection);
         }
     }

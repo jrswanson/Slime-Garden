@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Slime Garden</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         body {
             display: flex;
@@ -15,20 +16,46 @@
             margin: 0;
             height: 100vh;
             width: 100vw;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        canvas {
+            cursor: pointer;
+        }
+
+        .user-control {
+            display: flex;
+            justify-content: space-around;
+            width: 600px;
+        }
+
+        .reset-button {
+            color: #1D1D1D;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .reset-button:hover {
+            color: #ff00f6;
+        }
+
+        .demo-button {
+            color: #1D1D1D;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .demo-button:hover {
+            color: #ff00f6;
         }
 
         .spore-container {
             display: flex;
-            width: 100%;
             justify-content: center;
         }
 
         .spore-container > div {
             margin: 0px 10px;
-        }
-
-        canvas {
-            cursor: pointer;
         }
 
         #r-plant-spore {
@@ -103,21 +130,31 @@
 </head>
 <body>
     <canvas width="600" height="400" id="canvas"></canvas>
-    <div class='spore-container'>
-        <div class='plants-container'>
-            <div id='r-plant-spore' onclick="selectRPlant()"></div>
-            <div id='m-plant-spore' onclick="selectMPlant()"></div>
-            <div id='k-plant-spore' onclick="selectKPlant()"></div>
+    <div class='user-control'>
+        <div>
+            <div class='reset-button'
+                onclick='resetGarden()'>reset</div>
         </div>
-        <div class='fungus-container'>
-            <div id='r-fungus-spore' onclick="selectRFungus()"></div>
-            <div id='m-fungus-spore' onclick="selectMFungus()"></div>
-            <div id='k-fungus-spore' onclick="selectKFungus()"></div>
+        <div class='spore-container'>
+            <div class='plants-container'>
+                <div id='r-plant-spore' onclick="selectRPlant()"></div>
+                <div id='m-plant-spore' onclick="selectMPlant()"></div>
+                <div id='k-plant-spore' onclick="selectKPlant()"></div>
+            </div>
+            <div class='fungus-container'>
+                <div id='r-fungus-spore' onclick="selectRFungus()"></div>
+                <div id='m-fungus-spore' onclick="selectMFungus()"></div>
+                <div id='k-fungus-spore' onclick="selectKFungus()"></div>
+            </div>
+            <div class='animal-container'>
+                <div id='r-animal-spore' onclick="selectRAnimal()"></div>
+                <div id='m-animal-spore' onclick="selectMAnimal()"></div>
+                <div id='k-animal-spore' onclick="selectKAnimal()"></div>
+            </div>
         </div>
-        <div class='animal-container'>
-            <div id='r-animal-spore' onclick="selectRAnimal()"></div>
-            <div id='m-animal-spore' onclick="selectMAnimal()"></div>
-            <div id='k-animal-spore' onclick="selectKAnimal()"></div>
+        <div>
+            <div class='demo-button'
+                onclick='demoGarden()'>demo</div>
         </div>
     </div>
     <script src='index.js'></script>
