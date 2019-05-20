@@ -5,132 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Slime Garden</title>
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            background-color: #6F6F6F;
-            margin: 0;
-            height: 100vh;
-            width: 100vw;
-            font-family: 'Press Start 2P', cursive;
-        }
-
-        canvas {
-            cursor: pointer;
-        }
-
-        .user-control {
-            display: flex;
-            justify-content: space-around;
-            width: 600px;
-        }
-
-        .reset-button {
-            color: #1D1D1D;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .reset-button:hover {
-            color: #ff00f6;
-        }
-
-        .demo-button {
-            color: #1D1D1D;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .demo-button:hover {
-            color: #ff00f6;
-        }
-
-        .spore-container {
-            display: flex;
-            justify-content: center;
-        }
-
-        .spore-container > div {
-            margin: 0px 10px;
-        }
-
-        #r-plant-spore {
-            width: 60px;
-            height: 40px;
-            background-color: #b7ff6a;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
-
-        #m-plant-spore {
-            width: 60px;
-            height: 40px;
-            background-color: #52FF00;
-            cursor: pointer;
-        }
-
-        #k-plant-spore {
-            width: 60px;
-            height: 40px;
-            background-color: #038400;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        #r-fungus-spore {
-            width: 60px;
-            height: 40px;
-            background-color: #b3ffe5;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
-
-        #m-fungus-spore {
-            width: 60px;
-            height: 40px;
-            background-color: #00fcff;
-            cursor: pointer;
-        }
-
-        #k-fungus-spore {
-            width: 60px;
-            height: 40px;
-            background-color: #0083c7;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        #r-animal-spore {
-            width: 60px;
-            height: 40px;
-            background-color: #ff7c66;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
-
-        #m-animal-spore {
-            width: 60px;
-            height: 40px;
-            background-color: #ff2400;
-            cursor: pointer;
-        }
-
-        #k-animal-spore {
-            width: 60px;
-            height: 40px;
-            background-color: #9d1600;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas width="600" height="400" id="canvas"></canvas>
-    <div class='user-control'>
+    <div id='start-screen'>
+        <div class='main-title'>Slime Garden</div>
+        <div class='start-button'
+            onclick='clearStart()'>start</div>
+    </div>
+    <div class='canvas-container' onmousedown='clearHelp()'>
+        <canvas width="600" height="400" id="canvas"></canvas>
+        <div id='help-dialog'>
+            <div style='color: #52FF00'>first, seed with green</div>
+            <div style='color: #00fcff'>blue eats dead green</div>
+            <div style='color: #ff2400'>red eats live green</div>
+            <div style='color: #ffffff'>experiment!</div>
+        </div>
+    </div>
+    <div class='user-control' onmousedown='clearHelp()'>
         <div>
             <div class='reset-button'
                 onclick='resetGarden()'>reset</div>

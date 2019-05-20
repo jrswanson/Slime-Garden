@@ -1,0 +1,188 @@
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url(./PressStart2P-Regular.ttf);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(85, 85, 85);
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Press Start 2P', monospace;
+}
+
+#start-screen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #1D1D1D;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#hidden {
+    display: none;
+}
+
+.main-title {
+    color: #52FF00;
+    font-size: 60px;
+    text-align: center;
+    line-height: 1.2em;
+    margin-bottom: 20px;
+    user-select: none;
+}
+
+.start-button {
+    color: #ff00f6;
+    font-size: 26px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    padding: 5px;
+}
+
+.start-button:hover {
+    color: #00fcff;
+}
+
+.canvas-container {
+    position: relative;
+    z-index: 5;
+}
+
+#help-dialog {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#help-dialog div {
+    margin: 10px 0px;
+    user-select: none;
+}
+
+canvas {
+    cursor: pointer;
+}
+
+.user-control {
+    display: flex;
+    justify-content: space-around;
+    width: 600px;
+}
+
+.reset-button {
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    padding: 5px;
+}
+
+.reset-button:hover {
+    color: #ff00f6;
+}
+
+.demo-button {
+    color: white;
+    user-select: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.demo-button:hover {
+    color: #ff00f6;
+}
+
+.spore-container {
+    display: flex;
+    justify-content: center;
+}
+
+.spore-container > div {
+    margin: 0px 10px;
+}
+
+#r-plant-spore {
+    width: 60px;
+    height: 40px;
+    background-color: #b7ff6a;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#m-plant-spore {
+    width: 60px;
+    height: 40px;
+    background-color: #52FF00;
+    cursor: pointer;
+}
+
+#k-plant-spore {
+    width: 60px;
+    height: 40px;
+    background-color: #038400;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#r-fungus-spore {
+    width: 60px;
+    height: 40px;
+    background-color: #b3ffe5;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#m-fungus-spore {
+    width: 60px;
+    height: 40px;
+    background-color: #00fcff;
+    cursor: pointer;
+}
+
+#k-fungus-spore {
+    width: 60px;
+    height: 40px;
+    background-color: #0083c7;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#r-animal-spore {
+    width: 60px;
+    height: 40px;
+    background-color: #ff7c66;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#m-animal-spore {
+    width: 60px;
+    height: 40px;
+    background-color: #ff2400;
+    cursor: pointer;
+}
+
+#k-animal-spore {
+    width: 60px;
+    height: 40px;
+    background-color: #9d1600;
+    cursor: pointer;
+    margin-top: 20px;
+}

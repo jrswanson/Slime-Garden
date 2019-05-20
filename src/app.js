@@ -33,6 +33,25 @@ canvasElement.addEventListener('mouseleave', e => {
 });
 
 
+
+const clearStart = () => {
+    let screen = document.getElementById('start-screen');
+    screen.id = 'hidden';
+};
+
+window.clearStart = clearStart;
+
+const clearHelp = () => {
+    let screen = document.getElementById('help-dialog');
+    if (screen) {
+        screen.id = 'hidden';
+    }
+};
+
+window.clearHelp = clearHelp;
+
+
+
 const selectRPlant = () => {
     selectedSpore = 'rPlantSpore';
 };
