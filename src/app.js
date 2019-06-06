@@ -44,11 +44,21 @@ window.clearStart = clearStart;
 const clearHelp = () => {
     let screen = document.getElementById('help-dialog');
     if (screen) {
-        screen.id = 'hidden';
+        screen.id = 'help-hidden';
     }
 };
 
 window.clearHelp = clearHelp;
+
+const showHelp = () => {
+    let screen = document.getElementById('help-hidden');
+    if (screen) {
+        screen.id = 'help-dialog';
+        resetGarden();
+    }
+};
+
+window.showHelp = showHelp;
 
 
 

@@ -33,6 +33,10 @@ body {
     display: none;
 }
 
+#help-hidden {
+    display: none;
+}
+
 .main-title {
     color: #52FF00;
     font-size: 60px;
@@ -55,6 +59,25 @@ body {
     color: #00fcff;
 }
 
+.small-title {
+    color: white;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+.github-link {
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.github-link:hover {
+    color: #ff00f6;
+}
+
 .canvas-container {
     position: relative;
     z-index: 5;
@@ -75,6 +98,18 @@ body {
 #help-dialog div {
     margin: 10px 0px;
     user-select: none;
+}
+
+.show-help {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.show-help:hover {
+    color: #ff00f6;
 }
 
 canvas {
