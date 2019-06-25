@@ -1,5 +1,5 @@
 # Slime-Garden
-Slime Garden is a biology inspired simulation where spores of different types compete for growth space within a digital medium. It uses Javascript, HTML Canvas and CSS.
+Slime Garden is a biology inspired simulation where spores of different types compete for growth space within a digital medium. It uses Javascript, HTML Canvas and CSS
 
 [Live Demo](https://jrswanson.github.io/Slime-Garden/)
 
